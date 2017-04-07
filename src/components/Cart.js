@@ -12,12 +12,12 @@ class Cart extends Component {
 
   render() {
      const CartItems = this.props.cart.map((item, idx) => {
-      return <li key={idx}>{item}</li>
-    })
-
-    return( 
+       return <li key={idx}>{item}</li>
+     })
+    
+     return( 
        <div> 
-        <Shelf addItem={this.props.action.add}/>
+        <Shelf addItem={this.props.action.addItem}/>
         <h2>Cart Items</h2>
         <ol>
           {CartItems}
