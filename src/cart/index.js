@@ -1,4 +1,4 @@
-import cart from './cart.js'
+import cart from './reducers'
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
