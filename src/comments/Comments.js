@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import * as CommentsActions from './CommentsActions'
+import { addCommet } from './duck'
 import CommentsForm from './CommentsForm'
 
 class Comments extends Component {
@@ -20,7 +20,7 @@ class Comments extends Component {
      return( 
        <div> 
         <CommentsForm 
-          addCommet={this.props.action.addCommet}/>
+          addCommet={this.props.addCommet}/>
         <h2>Cart Items</h2>
         <ol>
           {CommentItems}
@@ -39,7 +39,7 @@ const mapStateToProps = (state, prop) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action:bindActionCreators(CommentsActions, dispatch)
+    addCommet: bindActionCreators(addCommet, dispatch)
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as CartActions from './action'
+import { addItem } from './duck'
 import Shelf from './Shelf'
 
 class Cart extends Component {
@@ -17,7 +17,7 @@ class Cart extends Component {
     
      return( 
        <div> 
-        <Shelf addItem={this.props.action.addItem}/>
+        <Shelf addItem={this.props.addItem}/>
         <h2>Cart Items</h2>
         <ol>
           {CartItems}
@@ -36,7 +36,7 @@ const mapStateToProps = (state, prop) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    action:bindActionCreators(CartActions, dispatch)
+    addItem: bindActionCreators(addItem, dispatch)
   }
 }
 
